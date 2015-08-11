@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="15A235d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,124 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMe-ad-87H">
+                                <rect key="frame" x="191" y="268" width="75" height="65"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="rock"/>
+                                <connections>
+                                    <action selector="playRock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iti-wb-PDj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Play!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67o-7k-oCs">
+                                <rect key="frame" x="261" y="421" width="78" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhb-HS-IMf">
+                                <rect key="frame" x="263" y="159" width="75" height="65"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="paper"/>
+                                <connections>
+                                    <action selector="playPaper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Aed-oP-rYV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTR-df-MYr">
+                                <rect key="frame" x="339" y="268" width="75" height="65"/>
+                                <animations/>
+                                <state key="normal" backgroundImage="scissors"/>
+                                <connections>
+                                    <segue destination="rk6-eW-b6k" kind="presentation" identifier="playScissors" id="hKp-Fz-IEi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qhb-HS-IMf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6tn-ge-gbv"/>
+                            <constraint firstItem="zMe-ad-87H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HGK-b3-OO6"/>
+                            <constraint firstItem="oTR-df-MYr" firstAttribute="leading" secondItem="Qhb-HS-IMf" secondAttribute="trailing" constant="1" id="Sgi-m1-l00"/>
+                            <constraint firstItem="oTR-df-MYr" firstAttribute="top" secondItem="Qhb-HS-IMf" secondAttribute="bottom" constant="44" id="gHH-xa-VjN"/>
+                            <constraint firstItem="67o-7k-oCs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iYW-lS-d1m"/>
+                            <constraint firstItem="zMe-ad-87H" firstAttribute="trailing" secondItem="Qhb-HS-IMf" secondAttribute="leading" constant="3" id="iYd-Kf-7xm"/>
+                            <constraint firstItem="oTR-df-MYr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ikO-cs-kIs"/>
+                            <constraint firstItem="zMe-ad-87H" firstAttribute="top" secondItem="Qhb-HS-IMf" secondAttribute="bottom" constant="44" id="qES-Ck-5jx"/>
+                            <constraint firstItem="67o-7k-oCs" firstAttribute="top" secondItem="oTR-df-MYr" secondAttribute="bottom" constant="88" id="scU-zg-yVk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="rk6-eW-b6k" kind="presentation" identifier="playPaper" id="MIi-gz-Jmy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="340" y="429"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="aVL-Vc-s8f">
+            <objects>
+                <viewController storyboardIdentifier="ResultViewController" id="rk6-eW-b6k" customClass="ResultViewController" customModule="Roshambo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GkS-RA-LmQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="N7l-Y5-x8h"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7EV-nZ-g0p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pn-wY-ZNz">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDE-KR-6ZF">
+                                <rect key="frame" x="265" y="363" width="71" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Play Again"/>
+                                <connections>
+                                    <action selector="playAgain:" destination="rk6-eW-b6k" eventType="touchUpInside" id="mUD-Gz-TcS"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GIB-PJ-Bam">
+                                <rect key="frame" x="180" y="28" width="240" height="240"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="VF4-VH-ucD"/>
+                                    <constraint firstAttribute="width" constant="240" id="X4G-MI-idE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GIB-PJ-Bam" firstAttribute="top" secondItem="GkS-RA-LmQ" secondAttribute="bottom" constant="8" id="2u1-lr-ubE"/>
+                            <constraint firstItem="HDE-KR-6ZF" firstAttribute="top" secondItem="9pn-wY-ZNz" secondAttribute="bottom" constant="53" id="FIP-kC-Sjm"/>
+                            <constraint firstItem="HDE-KR-6ZF" firstAttribute="centerX" secondItem="7EV-nZ-g0p" secondAttribute="centerX" id="RS7-kM-3Iv"/>
+                            <constraint firstItem="9pn-wY-ZNz" firstAttribute="centerY" secondItem="7EV-nZ-g0p" secondAttribute="centerY" id="TaN-xp-WgU"/>
+                            <constraint firstItem="GIB-PJ-Bam" firstAttribute="centerX" secondItem="7EV-nZ-g0p" secondAttribute="centerX" id="an2-cI-TiG"/>
+                            <constraint firstItem="9pn-wY-ZNz" firstAttribute="centerX" secondItem="7EV-nZ-g0p" secondAttribute="centerX" id="lKX-E0-49d"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultImageView" destination="GIB-PJ-Bam" id="3br-Xs-Val"/>
+                        <outlet property="resultLabel" destination="9pn-wY-ZNz" id="Yid-Q6-yBN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Jy-BF-4gg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021" y="429"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="paper" width="75" height="65"/>
+        <image name="rock" width="75" height="65"/>
+        <image name="scissors" width="75" height="65"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="hKp-Fz-IEi"/>
+    </inferredMetricsTieBreakers>
 </document>
