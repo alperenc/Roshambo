@@ -24,7 +24,7 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func playAgain(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popToRootViewControllerAnimated(true);
     }
     
     func displayResults() {

@@ -26,8 +26,7 @@ class GameViewController: UIViewController {
         
         controller.computer = randomPlay()
         controller.player = 1
-        
-        presentViewController(controller, animated: true, completion: nil)
+        navigationController?.pushViewController(controller, animated: true);
     }
     
     @IBAction func playPaper(sender: AnyObject) {

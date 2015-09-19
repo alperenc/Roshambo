@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="15A235d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cO1-jU-KfW">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Game View Controller-->
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zMe-ad-87H">
-                                <rect key="frame" x="191" y="268" width="75" height="65"/>
+                                <rect key="frame" x="188" y="268" width="75" height="65"/>
                                 <animations/>
                                 <state key="normal" backgroundImage="rock"/>
                                 <connections>
@@ -25,10 +25,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Play!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="67o-7k-oCs">
-                                <rect key="frame" x="261" y="421" width="78" height="21"/>
+                                <rect key="frame" x="261" y="421" width="77.5" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhb-HS-IMf">
@@ -44,7 +44,7 @@
                                 <animations/>
                                 <state key="normal" backgroundImage="scissors"/>
                                 <connections>
-                                    <segue destination="rk6-eW-b6k" kind="presentation" identifier="playScissors" id="hKp-Fz-IEi"/>
+                                    <segue destination="rk6-eW-b6k" kind="show" identifier="playScissors" id="hKp-Fz-IEi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,19 +56,20 @@
                             <constraint firstItem="oTR-df-MYr" firstAttribute="leading" secondItem="Qhb-HS-IMf" secondAttribute="trailing" constant="1" id="Sgi-m1-l00"/>
                             <constraint firstItem="oTR-df-MYr" firstAttribute="top" secondItem="Qhb-HS-IMf" secondAttribute="bottom" constant="44" id="gHH-xa-VjN"/>
                             <constraint firstItem="67o-7k-oCs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iYW-lS-d1m"/>
-                            <constraint firstItem="zMe-ad-87H" firstAttribute="trailing" secondItem="Qhb-HS-IMf" secondAttribute="leading" constant="3" id="iYd-Kf-7xm"/>
+                            <constraint firstItem="zMe-ad-87H" firstAttribute="trailing" secondItem="Qhb-HS-IMf" secondAttribute="leading" id="iYd-Kf-7xm"/>
                             <constraint firstItem="oTR-df-MYr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ikO-cs-kIs"/>
                             <constraint firstItem="zMe-ad-87H" firstAttribute="top" secondItem="Qhb-HS-IMf" secondAttribute="bottom" constant="44" id="qES-Ck-5jx"/>
                             <constraint firstItem="67o-7k-oCs" firstAttribute="top" secondItem="oTR-df-MYr" secondAttribute="bottom" constant="88" id="scU-zg-yVk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1Fa-W9-PHq"/>
                     <connections>
-                        <segue destination="rk6-eW-b6k" kind="presentation" identifier="playPaper" id="MIi-gz-Jmy"/>
+                        <segue destination="rk6-eW-b6k" kind="show" identifier="playPaper" id="MIi-gz-Jmy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="429"/>
+            <point key="canvasLocation" x="1152" y="429"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="aVL-Vc-s8f">
@@ -86,7 +87,7 @@
                                 <rect key="frame" x="279" y="289" width="42" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDE-KR-6ZF">
@@ -124,7 +125,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Jy-BF-4gg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1021" y="429"/>
+            <point key="canvasLocation" x="1833" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TMX-yQ-N13">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cO1-jU-KfW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oiq-Lq-kVK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZsB-o1-ZEB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z0u-er-mlS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="429"/>
         </scene>
     </scenes>
     <resources>
@@ -133,6 +153,6 @@
         <image name="scissors" width="75" height="65"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hKp-Fz-IEi"/>
+        <segue reference="MIi-gz-Jmy"/>
     </inferredMetricsTieBreakers>
 </document>
